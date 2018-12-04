@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    }
+
+    body {
+    overflow-x: hidden;
+    
+    background: rgb(80, 79, 88);
+
+    font-size: 14px;
+    font-family: sans-serif;
+    
+    }
+
+    .articles {
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    max-height: 70%;
+    
+    display: flex;
+    align-items: center;
+       
+    }
+    .article {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: stretch;
+
+    background: white;  
+    border-radius: 5%;
+
+    transition: transform .3s ease-out;
+    }
+    @media screen and (max-width:642px){
+        .article {
+        min-width: 90%;
+        margin: 0px 5%;
+        padding:5px;
+
+        transform: translateX(calc(var(--i)*(-111%)));
+        }
+    }
+
+    @media screen and (min-width:642px) {
+        .article {
+        min-width: 45%;
+        margin: 0px 3%;
+        padding:5px;
+        
+        transform: translateX(calc(var(--i)*(-227%)));
+        }
+    }
+    
+    @media screen and (min-width:1020px){
+        .article { 
+        min-width: 21%;
+        margin: 0px 2%;
+        padding: 10px;
+
+        transform: translateX(calc(var(--i)*(-480%)));
+        }
+    }
+    
+.article img {
+    width: 100%;
+}
+
+.article p, span {
+    text-align: center;
+}
+
+.description {
+    font-style: italic;
+}
+
+.title {
+   
+    position: relative;
+    top: 30%;
+   
+    width: 100%;
+    margin: 0;
+    padding: 2%;
+    
+
+    color: white;
+    font-size: 16px;
+
+    background: green;
+    
+}
+.countView:before {
+    font-family: FontAwesome;
+    content: "\f06e";
+    padding-left: 30%;
+}
+.author:before {
+    font-family: FontAwesome;
+    content: "\f183";
+    padding-left: 30%;
+}
+.datePublish:before {
+    font-family: FontAwesome;
+    content: "\f073";
+    padding-left: 30%;
+}
+
+.countView, .author, .datePublish {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-right: 30%;
+}
+.linkVideo {
+    height: 220px;
+
+    background-size: 100%;
+    background-repeat: no-repeat;  
+}
+

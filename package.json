@@ -1,0 +1,23 @@
+{
+  "name": "youtube-client",
+  "version": "1.0.0",
+  "description": "youtube-client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint source/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rolling-scopes-school/alenashkr-2018Q3/tree/youtube-client"
+  },
+  "author": "Alena Shkradziuk",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
