@@ -117,17 +117,13 @@ function search() {
 window.onload = function start() {
   const searchDiv = document.createElement('div');
   searchDiv.className = 'search';
-  searchDiv.style.width = '80%';
-  searchDiv.style.margin = '40px auto';
   const searchInput = document.createElement('input');
   searchInput.className = 'searchInput';
   searchInput.type = 'text';
-  searchInput.placeholder = 'Введите...';
   searchInput.value = '';
+  searchInput.autofocus = 'true';
   searchInput.name = 'q';
-  searchInput.style.height = '40px';
-  searchInput.style.width = '50%';
-  searchInput.style.marginRight = '20px';
+
   searchDiv.appendChild(searchInput);
   const buttonSubmit = document.createElement('button');
   buttonSubmit.className = 'searchSubmitButton';
@@ -135,4 +131,5 @@ window.onload = function start() {
   searchDiv.appendChild(buttonSubmit);
   document.body.appendChild(searchDiv);
   buttonSubmit.addEventListener('click', search);
+  searchInput.addEventListener('focus', function focus() { searchInput.value = ''; });
 };
