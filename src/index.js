@@ -23,11 +23,27 @@ function move(e) {
   }
   currentPositionX = null;
 }
-function showVideoes(data, dataStatistics) {
+function showTooltips() {
+  const tooltips = document.createElement('div');
+  tooltips.className = 'tooltips';
+  const tooltip1 = document.createElement('div');
+  tooltip1.className = 'tooltipCurrent';
+  const tooltip2 = document.createElement('div');
+  const tooltip3 = document.createElement('div');
+  tooltip2.className = 'tooltipElement';
+  tooltip3.className = 'tooltipElement';
+  tooltips.appendChild(tooltip1);
+  tooltips.appendChild(tooltip2);
+  tooltips.appendChild(tooltip3);
+  document.body.appendChild(tooltips);
+}
+
+function showVideos(data, dataStatistics) {
   const video = data;
   const videoStatistics = dataStatistics;
   const resultDiv = document.createElement('div');
   resultDiv.className = 'articles';
+
   if (video.items.length === 0) {
     const resultMessage = document.createElement('p');
     resultMessage.textContent = 'По Вашему запросу ничего не найдено';
@@ -66,6 +82,7 @@ function showVideoes(data, dataStatistics) {
       resultDiv.appendChild(divArticle);
       document.body.appendChild(resultDiv);
     }
+    showTooltips();
     resultDiv.addEventListener('mousedown', lock);
     resultDiv.addEventListener('touchstart', lock);
     resultDiv.addEventListener('mouseup', move);
@@ -78,6 +95,7 @@ function showVideoes(data, dataStatistics) {
 function search() {
   if (document.querySelector('.articles') !== null) {
     document.querySelector('.articles').remove();
+    document.querySelector('.tooltips').remove();
   }
   const searchValue = document.querySelector('.searchInput').value;
   const APIKEY = 'AIzaSyCttWdVyalxCfJCtGhTgRqpcxb_deqCruA';
@@ -98,14 +116,14 @@ function search() {
       xhrStatistic.open('GET', urlStatistic);
       xhrStatistic.onload = function resp2() {
         const resultStatistic = JSON.parse(xhrStatistic.responseText);
-        showVideoes(result, resultStatistic);
+        showVideos(result, resultStatistic);
       };
       xhrStatistic.onerror = function onerr() {
         return (`Ошибка ${this.status}`);
       };
       xhrStatistic.send();
     } else {
-      showVideoes(result);
+      showVideos(result);
     }
   };
   xhr.onerror = function onerr() {
@@ -113,6 +131,7 @@ function search() {
   };
   xhr.send();
 }
+
 
 window.onload = function start() {
   const searchDiv = document.createElement('div');
