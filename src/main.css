@@ -30,16 +30,19 @@
     height: 40px; 
     width: 10%;  
     border-radius: 8px;
+
+    font-size: 12px;
     }
 
     .articles {
     overflow-y: hidden;
     overflow-x: hidden;
 
-    max-height: 70%;
+    height: 75vh;
     
     display: flex;
     align-items: center;
+
     
     }
     .article {
@@ -47,6 +50,8 @@
     flex-direction: column;
     justify-content:space-between;
     align-items: stretch;
+
+    overflow: hidden;
 
     background: white;  
     border-radius: 5%;
@@ -60,6 +65,10 @@
         padding:5px;
 
         transform: translateX(calc(var(--i)*(-111%)));
+        }
+
+        .searchSubmitButton {
+            width: 20%;
         }
     }
 
@@ -147,7 +156,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    margin-top: 4%;
+    
 
 }
 .tooltipElement, .tooltipCurrent {
@@ -156,6 +165,9 @@
     background: white;
     border-radius: 50%;
     margin-right: 5px;
+
+    text-align: center;
+    font-weight: bold;
 }
 
 .tooltipCurrent {

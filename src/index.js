@@ -26,16 +26,18 @@ function move(e) {
 function showTooltips() {
   const tooltips = document.createElement('div');
   tooltips.className = 'tooltips';
-  const tooltip1 = document.createElement('div');
-  tooltip1.className = 'tooltipCurrent';
-  const tooltip2 = document.createElement('div');
-  const tooltip3 = document.createElement('div');
-  tooltip2.className = 'tooltipElement';
-  tooltip3.className = 'tooltipElement';
-  tooltips.appendChild(tooltip1);
-  tooltips.appendChild(tooltip2);
-  tooltips.appendChild(tooltip3);
+
+  for (let i = 0; i < 3; i += 1) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltipElement';
+    const numberTooltip = document.createElement('span');
+    numberTooltip.innerHTML = i + 1;
+    tooltip.appendChild(numberTooltip);
+    tooltips.appendChild(tooltip);
+  }
+
   document.body.appendChild(tooltips);
+  document.querySelector('.tooltipElement').className = 'tooltipCurrent';
 }
 
 function showVideos(data, dataStatistics) {
