@@ -23,21 +23,21 @@ function move(e) {
   }
   currentPositionX = null;
 }
-function showTooltips() {
-  const tooltips = document.createElement('div');
-  tooltips.className = 'tooltips';
+function showPageElement() {
+  const indicationPages = document.createElement('div');
+  indicationPages.className = 'indicationPages';
 
   for (let i = 0; i < 3; i += 1) {
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltipElement';
-    const numberTooltip = document.createElement('span');
-    numberTooltip.innerHTML = i + 1;
-    tooltip.appendChild(numberTooltip);
-    tooltips.appendChild(tooltip);
+    const indicationPagesElement = document.createElement('div');
+    indicationPagesElement.className = 'pageElement';
+    const numberPage = document.createElement('span');
+    numberPage.innerHTML = i + 1;
+    indicationPagesElement.appendChild(numberPage);
+    indicationPages.appendChild(indicationPagesElement);
   }
 
-  document.body.appendChild(tooltips);
-  document.querySelector('.tooltipElement').className = 'tooltipCurrent';
+  document.body.appendChild(indicationPages);
+  document.querySelector('.pageElement').className = 'pageCurrent';
 }
 
 function showVideos(data, dataStatistics) {
@@ -84,7 +84,7 @@ function showVideos(data, dataStatistics) {
       resultDiv.appendChild(divArticle);
       document.body.appendChild(resultDiv);
     }
-    showTooltips();
+    showPageElement();
     resultDiv.addEventListener('mousedown', lock);
     resultDiv.addEventListener('touchstart', lock);
     resultDiv.addEventListener('mouseup', move);

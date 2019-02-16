@@ -151,7 +151,7 @@
     background-repeat: no-repeat;  
 }
 
-.tooltips {
+.indicationPages {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -159,7 +159,7 @@
     
 
 }
-.tooltipElement, .tooltipCurrent {
+.pageElement, .pageCurrent {
     width: 20px;
     height: 20px;
     background: white;
@@ -170,7 +170,7 @@
     font-weight: bold;
 }
 
-.tooltipCurrent {
+.pageCurrent {
     background: red;
 }
 
